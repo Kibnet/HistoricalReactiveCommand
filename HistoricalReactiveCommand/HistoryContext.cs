@@ -109,5 +109,6 @@ namespace HistoricalReactiveCommand
         }
 
         internal IObservable<HistoryEntry> Record(HistoryEntry entry, Func<HistoryEntry, IObservable<HistoryEntry>> execute) => _history.Record(entry, execute);
+        internal void Record(HistoryEntry entry) => _history.Add(entry);
     }
 }
