@@ -10,6 +10,7 @@ namespace HistoricalReactiveCommand
         IObservable<bool> CanRedo { get; }
         IObservable<bool> CanRecord { get; }
         IObservable<bool> CanClear { get; }
+        bool CanAddInternalCommand { get; set; }
 
         IObservable<HistoryEntry> Undo(Func<HistoryEntry, IObservable<HistoryEntry>> discard);
         IObservable<HistoryEntry> Redo(Func<HistoryEntry, IObservable<HistoryEntry>> execute);
